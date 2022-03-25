@@ -5,6 +5,7 @@
 import sys
 from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget,QApplication
+from math import sin, cos, tan, pi
  
 # Cargar nuestro formulario *.ui
 form_class = uic.loadUiType("Calculadora.ui")[0]
