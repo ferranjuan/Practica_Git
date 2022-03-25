@@ -31,7 +31,18 @@ class MyWindowClass(QWidget, form_class):
     def borra(self):
         self.res = self.res[:-1]
         self.pantalla.setPlainText(self.res)
-
+    def seno(self):
+        valor = sin(eval(self.res)*pi/180)
+        self.res = '%0.4f'%valor
+        self.pantalla.setPlainText(self.res)
+    def coseno(self):
+        valor = cos(eval(self.res)*pi/180)
+        self.res = '%0.4f'%valor
+        self.pantalla.setPlainText(self.res)
+    def tangente(self):
+        valor = tan(eval(self.res)*pi/180)
+        self.res = '%0.4f'%valor
+        self.pantalla.setPlainText(self.res)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
