@@ -23,9 +23,15 @@ class MyWindowClass(QWidget, form_class):
         self.res += boton.text()
         self.pantalla.setPlainText(self.res)
     def evalua(self):
-        valor = eval(self.res)
-        self.res = '%0.4f'%valor
-        self.pantalla.setPlainText(self.res)
+        try:
+            valor = eval(self.res)
+            self.res = '%0.4f'%valor
+            self.pantalla.setPlainText(self.res)
+            self.res = ''
+        except:
+            self.res = 'expresión incorrecta'
+            self.pantalla.setPlainText(self.res)
+            self.res = ''
     def borratodo(self):
         self.res = ''
         self.pantalla.setPlainText(self.res)
@@ -33,17 +39,35 @@ class MyWindowClass(QWidget, form_class):
         self.res = self.res[:-1]
         self.pantalla.setPlainText(self.res)
     def seno(self):
-        valor = sin(eval(self.res)*pi/180)
-        self.res = '%0.4f'%valor
-        self.pantalla.setPlainText(self.res)
+        try:
+            valor = sin(eval(self.res)*pi/180)
+            self.res = '%0.4f'%valor
+            self.pantalla.setPlainText(self.res)
+            self.res = ''
+        except:
+            self.res = 'expresión incorrecta'
+            self.pantalla.setPlainText(self.res)
+            self.res = ''
     def coseno(self):
-        valor = cos(eval(self.res)*pi/180)
-        self.res = '%0.4f'%valor
-        self.pantalla.setPlainText(self.res)
+        try:
+            valor = cos(eval(self.res)*pi/180)
+            self.res = '%0.4f'%valor
+            self.pantalla.setPlainText(self.res)
+            self.res = ''
+        except:
+            self.res = 'expresión incorrecta'
+            self.pantalla.setPlainText(self.res)
+            self.res = ''
     def tangente(self):
-        valor = tan(eval(self.res)*pi/180)
-        self.res = '%0.4f'%valor
-        self.pantalla.setPlainText(self.res)
+        try:
+            valor = tan(eval(self.res)*pi/180)
+            self.res = '%0.4f'%valor
+            self.pantalla.setPlainText(self.res)
+            self.res = ''
+        except:
+            self.res = 'expresión incorrecta'
+            self.pantalla.setPlainText(self.res)
+            self.res = ''
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
